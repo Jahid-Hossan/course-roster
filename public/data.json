@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "title": "Python Programming Basics",
+        "description": "Learn the fundamentals of Python programming, including variables, data types, control structures, and functions. Ideal for beginners.",
+        "price": 2999,
+        "credit_hour": 3,
+        "img": "https://i.ibb.co/0txP0T7/Rectangle-2.png"
+    },
+    {
+        "id": 2,
+        "title": "MySQL Database Administration",
+        "description": "Master MySQL database administration and management. Cover topics such as database design, SQL queries, and optimization.",
+        "price": 5999,
+        "credit_hour": 4,
+        "img": "https://i.ibb.co/8XS2ww2/Rectangle-2-1.png"
+    },
+    {
+        "id": 3,
+        "title": "C Programming Essentials",
+        "description": "Learn the essential concepts of C programming. Explore topics like variables, loops, pointers, and memory management.",
+        "price": 3499,
+        "credit_hour": 2,
+        "img": "https://i.ibb.co/4jTLwry/Rectangle-2-2.png"
+    },
+    {
+        "id": 4,
+        "title": "Algorithms and Data Structures",
+        "description": "Study algorithms and data structures for efficient problem-solving. Cover sorting, searching, and data manipulation techniques.",
+        "price": 7999,
+        "credit_hour": 5,
+        "img": "https://i.ibb.co/kGwH36C/Rectangle-2-3.png"
+    },
+    {
+        "id": 5,
+        "title": "C++ Programming for Developers",
+        "description": "Advance your C++ programming skills. Explore object-oriented programming, templates, and advanced topics.",
+        "price": 4499,
+        "credit_hour": 3,
+        "img": "https://i.ibb.co/M8sh4Fv/Rectangle-2-4.png"
+    },
+    {
+        "id": 6,
+        "title": "Software Engineering Principles",
+        "description": "Learn software engineering principles and practices. Cover software development life cycle, design patterns, and testing.",
+        "price": 6999,
+        "credit_hour": 6,
+        "img": "https://i.ibb.co/TvJXgqT/Rectangle-2-5.png"
+    },
+    {
+        "id": 7,
+        "title": "PHP Web Development",
+        "description": "Become a PHP web developer. Create dynamic web pages, handle forms, and work with databases using PHP and MySQL.",
+        "price": 1999,
+        "credit_hour": 1,
+        "img": "https://i.ibb.co/k9LnpQ9/Rectangle-2-6.png"
+    },
+    {
+        "id": 8,
+        "title": "Data Structures and Algorithms",
+        "description": "Explore data structures and algorithms for efficient coding. Cover trees, graphs, and dynamic programming.",
+        "price": 5499,
+        "credit_hour": 4,
+        "img": "https://i.ibb.co/q946dW2/Rectangle-3.png"
+    },
+    {
+        "id": 9,
+        "title": "AWS Cloud Services",
+        "description": "Master Amazon Web Services (AWS) cloud services. Learn about EC2, S3, and cloud architecture best practices.",
+        "price": 2999,
+        "credit_hour": 2,
+        "img": "https://i.ibb.co/n7hrrmv/Rectangle-3-1.png"
+    }
+]

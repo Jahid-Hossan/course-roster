@@ -1,12 +1,14 @@
 
 import './App.css'
+import Courses from './Component/Courses/Courses'
+
 
 function App() {
 
 
   return (
     <>
-      <h1 className=' '>Vite + React</h1>
+      <Courses></Courses>
     </>
   )
 }
