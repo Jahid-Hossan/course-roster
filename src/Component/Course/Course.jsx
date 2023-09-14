@@ -10,14 +10,14 @@ const Course = ({ course, selectHandler }) => {
             <div className="bg-base-100 rounded-xl p-4 ">
                 <img src={img} className="rounded-xl mb-4 w-full" />
                 <div className=" items-center  text-center">
-                    <h2 className="text-left text-lg font-semibold mb-3">{title}</h2>
+                    <h2 className="text-left h-6 overflow-hidden text-lg font-semibold mb-3">{title}</h2>
                     <p className='text-left overflow-hidden h-16 text-sm font-normal text-gray-500 mb-5'>{description}</p>
                     <div className='flex justify-between'>
-                        <div className='flex gap-3'>
+                        <div className='flex gap-1'>
                             <FiDollarSign className='text-xl'></FiDollarSign>
                             <p className='text-base font-medium text-gray-500 mb-5 '>Price: {price}$</p>
                         </div>
-                        <div className='flex gap-3'>
+                        <div className='flex gap-1 '>
                             <BsBook className='text-xl'></BsBook><p className='text-base font-medium text-gray-500 mb-5 '> Credit: {credit_hour}hr</p>
                         </div>
                     </div>
