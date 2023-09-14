@@ -5,7 +5,6 @@ import Courses from './Component/Courses/Courses'
 
 function App() {
 
-
   return (
     <>
       <Courses></Courses>
