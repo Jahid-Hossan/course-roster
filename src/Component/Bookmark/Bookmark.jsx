@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
+import Courselist from '../Courselist/Courselist';
 
 const Bookmark = ({ selectedCourse }) => {
-    const [creditHr, setCreditHr] = useState(0);
-    const { id, title, description, price, credit_hour, img
-    } = selectedCourse;
-
-    // const newCreditHr = creditHr + credit_hour;
-    // setCreditHr(creditHr + credit_hour);
-
+    console.log(selectedCourse);
     return (
-        <div>
-            <h2>Credit Hour Remaining  hr</h2>
-        </div>
+        <ul className='px-4'>
+            <Courselist selectedCourse={selectedCourse}></Courselist>
+        </ul>
     );
 };
 

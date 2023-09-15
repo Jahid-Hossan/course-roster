@@ -3,9 +3,10 @@ import Course from '../Course/Course';
 import Bookmark from '../Bookmark/Bookmark';
 
 const Courses = () => {
+    const creditLimit = 20;
     const [courses, setCourses] = useState([]);
     const [selectedCourses, setSelectedCourses] = useState([])
-    // const [creditHr, setCreditHr] = useState(0);
+    const [creditHr, setCreditHr] = useState(creditLimit);
     useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
@@ -14,26 +15,24 @@ const Courses = () => {
 
     const selectHandler = (course) => {
         const isSelected = selectedCourses.find(item => item.id === course.id);
-
         if (isSelected) {
             return alert('Already added')
         } else {
-
-            const newSelected = [...selectedCourses, course];
-            setSelectedCourses(newSelected);
-            let creditHr = 0;
-            selectedCourses.map(course => {
-                creditHr = creditHr + course.credit_hour;
+            const checkCr = creditHr - course.credit_hour;
+            if (checkCr >= 0) {
+                const newSelected = [...selectedCourses, course];
+                setSelectedCourses(newSelected);
                 console.log(creditHr);
-            })
+                const rest = creditHr - course.credit_hour;
+                setCreditHr(rest)
+            } else {
+                return alert('Limit is exeeded')
+            }
+
 
         }
     }
 
-    let creditHr = 0;
-    selectedCourses.map(course => {
-        creditHr = creditHr + course.credit_hour;
-    })
 
     return (
         <div className='container px-16 mx-auto'>
@@ -47,7 +46,7 @@ const Courses = () => {
                             course={course}></Course>)
                     }
                 </div>
-                <div>
+                <div className='p-4'>
                     <h2>Credit Hour Remaining {creditHr} hr</h2>
                     {
                         selectedCourses.map(selectedCourse => <Bookmark
