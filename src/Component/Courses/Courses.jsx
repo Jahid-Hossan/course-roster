@@ -7,6 +7,9 @@ const Courses = () => {
     const [courses, setCourses] = useState([]);
     const [selectedCourses, setSelectedCourses] = useState([])
     const [creditHr, setCreditHr] = useState(creditLimit);
+    const [totalCrHr, setTotalCrHr] = useState(0)
+    const [totalPrice, setTotalPrice] = useState(0)
+
     useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
@@ -25,6 +28,10 @@ const Courses = () => {
                 console.log(creditHr);
                 const rest = creditHr - course.credit_hour;
                 setCreditHr(rest)
+                const newtotalCrHr = totalCrHr + course.credit_hour;
+                setTotalCrHr(newtotalCrHr);
+                const newTotalPrice = totalPrice + course.price;
+                setTotalPrice(newTotalPrice);
             } else {
                 return alert('Limit is exeeded')
             }
@@ -35,9 +42,9 @@ const Courses = () => {
 
 
     return (
-        <div className='container px-16 mx-auto'>
-            <h2 className='text-3xl font-extrabold text-center rounded-lg mb-6 bg-white py-6'>Course Registration</h2>
-            <div className='flex gap-5'>
+        <div className='container p-8  mx-auto'>
+            <h2 className='text-3xl font-extrabold text-center rounded-lg mb-6 py-6'>Course Registration</h2>
+            <div className='flex gap-4'>
                 <div className=' w-3/4 grid grid-cols-3 gap-4'>
                     {
                         courses.map(course => <Course
@@ -46,13 +53,18 @@ const Courses = () => {
                             course={course}></Course>)
                     }
                 </div>
-                <div className='p-4'>
-                    <h2>Credit Hour Remaining {creditHr} hr</h2>
-                    {
-                        selectedCourses.map(selectedCourse => <Bookmark
-                            key={selectedCourse.id}
-                            selectedCourse={selectedCourse}></Bookmark>)
-                    }
+                <div className=' bg-white p-4 rounded-xl'>
+                    <h2 className='font-bold text-lg text-blue-500 border-b-2 pb-4'>Credit Hour Remaining {creditHr} hr</h2>
+                    <h2 className='font-bold text-xl pt-4'>Course Name</h2>
+                    <ul className='p-4'>
+                        {
+                            selectedCourses.map(selectedCourse => <Bookmark
+                                key={selectedCourse.id}
+                                selectedCourse={selectedCourse}></Bookmark>)
+                        }
+                    </ul>
+                    <h4 className='py-4 border-y-2 font-medium text-base text-gray-700'>Total Credit Hour : {totalCrHr}</h4>
+                    <h2 className='py-4  font-semibold text-base text-gray-700'>Total Price : {totalPrice}USD</h2>
                 </div>
             </div>
         </div>
