@@ -55,9 +55,9 @@ const Courses = () => {
 
     return (
         <div className='container p-8  mx-auto'>
-            <h2 className='text-3xl font-extrabold text-center rounded-lg mb-6 py-6'>Course Registration</h2>
-            <div className='flex gap-4'>
-                <div className=' w-3/4 grid grid-cols-3 gap-4'>
+            <h2 className='text-2xl md:text-3xl font-extrabold md:text-center rounded-lg mb-6 py-6'>Course Registration</h2>
+            <div className='md:flex gap-4'>
+                <div className=' w-3/4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 mx-auto gap-4'>
                     {
                         courses.map(course => <Course
                             key={course.id}
@@ -66,7 +66,7 @@ const Courses = () => {
                     }
                 </div>
                 <div className=' bg-white p-4 rounded-xl'>
-                    <h2 className='font-bold text-lg text-blue-500 border-b-2 pb-4'>Credit Hour Remaining {creditHr} hr</h2>
+                    <h2 className='font-bold text-base md:text-lg text-blue-500 border-b-2 pb-4'>Credit Hour Remaining {creditHr} hr</h2>
                     <h2 className='font-bold text-xl pt-4'>Course Name</h2>
                     <ul className='p-4'>
                         {

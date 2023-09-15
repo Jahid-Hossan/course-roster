@@ -7,7 +7,7 @@ const Course = ({ course, selectHandler }) => {
     } = course;
     return (
         <div>
-            <div className="bg-base-100 rounded-xl p-4 ">
+            <div className="bg-base-100 w-full rounded-xl p-4 ">
                 <img src={img} className="rounded-xl mb-4 w-full" />
                 <div className=" items-center  text-center">
                     <h2 className="text-left h-6 overflow-hidden text-lg font-semibold mb-3">{title}</h2>
