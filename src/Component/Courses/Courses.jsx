@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Course from '../Course/Course';
 import Bookmark from '../Bookmark/Bookmark';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Courses = () => {
     const creditLimit = 20;
@@ -16,10 +18,16 @@ const Courses = () => {
             .then(data => setCourses(data))
     }, []);
 
+
+
     const selectHandler = (course) => {
         const isSelected = selectedCourses.find(item => item.id === course.id);
         if (isSelected) {
-            return alert('Already added')
+            toast.error('Already added', {
+                position: "top-center",
+                autoClose: 5000,
+                theme: "colored",
+            });
         } else {
             const checkCr = creditHr - course.credit_hour;
             if (checkCr >= 0) {
@@ -33,7 +41,11 @@ const Courses = () => {
                 const newTotalPrice = totalPrice + course.price;
                 setTotalPrice(newTotalPrice);
             } else {
-                return alert('Limit is exeeded')
+                toast.error('Credit hour limit exceeded', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    theme: "colored",
+                });
             }
 
 
@@ -67,6 +79,7 @@ const Courses = () => {
                     <h2 className='py-4  font-semibold text-base text-gray-700'>Total Price : {totalPrice}USD</h2>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };
