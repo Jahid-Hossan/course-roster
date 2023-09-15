@@ -2,10 +2,13 @@ import React from 'react';
 import { BsBook } from 'react-icons/bs';
 import { FiDollarSign } from 'react-icons/fi';
 
+// getting data as props
 const Course = ({ course, selectHandler }) => {
+    // destructing data
     const { id, title, description, price, credit_hour, img
     } = course;
     return (
+        // cards
         <div>
             <div className="bg-base-100 w-full rounded-xl p-4 ">
                 <img src={img} className="rounded-xl mb-4 w-full" />
