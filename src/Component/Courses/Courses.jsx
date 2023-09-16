@@ -85,27 +85,29 @@ const Courses = () => {
                     }
                 </div>
                 {/* bookmark secton */}
-                <div className=' bg-white p-4 rounded-xl'>
-                    {/* remaining credit section */}
-                    <h2 className='font-bold text-base md:text-lg text-blue-500 border-b-2 pb-4'>Credit Hour Remaining {creditHr} hr</h2>
-                    {/* course name and course list section */}
-                    <h2 className='font-bold text-xl pt-4'>Course Name</h2>
-                    <ul className='p-4'>
-                        {
-                            selectedCourses.map(selectedCourse => <Bookmark
-                                key={selectedCourse.id}
-                                selectedCourse={selectedCourse}></Bookmark>)
-                        }
-                    </ul>
-                    {/* total credit section */}
-                    <h4 className='py-4 border-y-2 font-medium text-base text-gray-700'>Total Credit Hour : {totalCrHr}</h4>
-                    {/* total price section */}
-                    <h2 className='py-4  font-semibold text-base text-gray-700'>Total Price : {totalPrice}USD</h2>
+                <div>
+                    <div className='bg-white  p-4 rounded-xl'>
+                        {/* remaining credit section */}
+                        <h2 className='font-bold text-base md:text-lg text-blue-500 border-b-2 pb-4'>Credit Hour Remaining {creditHr} hr</h2>
+                        {/* course name and course list section */}
+                        <h2 className='font-bold text-xl pt-4'>Course Name</h2>
+                        <ul className='p-4'>
+                            {
+                                selectedCourses.map(selectedCourse => <Bookmark
+                                    key={selectedCourse.id}
+                                    selectedCourse={selectedCourse}></Bookmark>)
+                            }
+                        </ul>
+                        {/* total credit section */}
+                        <h4 className='py-4 border-y-2 font-medium text-base text-gray-700'>Total Credit Hour : {totalCrHr}</h4>
+                        {/* total price section */}
+                        <h2 className='py-4  font-semibold text-base text-gray-700'>Total Price : {totalPrice}USD</h2>
+                    </div>
                 </div>
             </div>
             {/* toast conteiner */}
             <ToastContainer />
-        </div>
+        </div >
     );
 };
 
